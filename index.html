@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sino-Thai Study Club — กลุ่มศึกษาจีน-ไทย · 泰中学部</title>
+  <meta name="description" content="A forum for Thai perspectives on China and Southeast Asia. Bringing together Thai professionals, researchers, and scholars to build rigorous, independent analysis." />
+  <meta property="og:title" content="Sino-Thai Study Club" />
+  <meta property="og:description" content="A forum for Thai perspectives on China and Southeast Asia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sino-Thai Study Club" />
+  <meta name="twitter:description" content="A forum for Thai perspectives on China and Southeast Asia." />
+
+  <!-- Favicon: 泰中 on crimson -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='2' fill='%238B1A1A'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='15' fill='%23FAF7F2' text-anchor='middle'%3E%E6%B3%B0%E4%B8%AD%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Base ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #FAF7F2;
+      --text:       #1A1A1A;
+      --muted:      #5C5C5C;
+      --red:        #8B1A1A;
+      --red-hover:  #6B1414;
+      --gold:       #B8960C;
+      --gold-hover: #9A7A0A;
+      --gold-faint: rgba(184, 150, 12, 0.40);
+      --serif:      'EB Garamond', Georgia, serif;
+      --sans:       'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Typography helpers ─────────────────────────────────────── */
+    .serif { font-family: var(--serif); }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .th {
+      font-family: var(--sans);
+      color: var(--muted);
+      font-size: 0.92em;
+      line-height: 1.8;
+    }
+
+    /* ── Gold rule ──────────────────────────────────────────────── */
+    .gold-rule {
+      border: none;
+      border-top: 1px solid var(--gold-faint);
+      margin: 0;
+    }
+
+    .gold-rule--full {
+      border-top-color: var(--gold);
+    }
+
+    /* ── Layout ─────────────────────────────────────────────────── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 5rem 0;
+      scroll-margin-top: 56px;
+    }
+
+    section + section {
+      border-top: 2px solid rgba(26, 26, 26, 0.08);
+    }
+
+    /* ── Logo mark ──────────────────────────────────────────────── */
+    .logo-mark        { display: block; flex-shrink: 0; }
+    .logo-mark--nav   { width: 26px; height: 26px; }
+    .logo-mark--hero  { width: 56px; height: 56px; margin-bottom: 1.6rem; }
+    .logo-mark--foot  { width: 20px; height: 20px; }
+
+    /* ── Nav ────────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--gold-faint);
+    }
+
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--red);
+      text-decoration: none;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.18s;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    /* ── Hero ───────────────────────────────────────────────────── */
+    #hero {
+      padding: 7rem 0 6rem;
+      border-top: none;
+    }
+
+    #hero .container {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      font-weight: 400;
+      color: var(--red);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .hero-name-th {
+      font-family: var(--sans);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--muted);
+      margin-top: 0.4rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-rule {
+      width: 80px;
+      border: none;
+      border-top: 1px solid var(--gold);
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      color: var(--text);
+      font-weight: 400;
+      max-width: 560px;
+      line-height: 1.5;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-tagline-th {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    /* ── Section headings ───────────────────────────────────────── */
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--red);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-heading-th {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── About ──────────────────────────────────────────────────── */
+    .about-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 720px;
+    }
+
+    .about-body p + p { margin-top: 1.2rem; }
+
+    .about-divider {
+      border: none;
+      border-top: 1px solid var(--gold-faint);
+      margin: 2.4rem 0;
+    }
+
+    .about-th p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 720px;
+      line-height: 1.85;
+    }
+
+    .about-th p + p { margin-top: 1rem; }
+
+    /* ── What We Do ─────────────────────────────────────────────── */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.4rem;
+      margin-top: 2.4rem;
+    }
+
+    .pillar-label {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.7rem;
+    }
+
+    .pillar-body {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .pillar-body-th {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-top: 0.8rem;
+    }
+
+    /* ── Founding Team ──────────────────────────────────────────── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+      margin-top: 2.4rem;
+    }
+
+    .team-card {
+      border: 1px solid var(--gold);
+      background: var(--bg);
+      padding: 1.8rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .team-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .team-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .team-affil {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-top: 0.3rem;
+    }
+
+    .team-desc {
+      font-size: 0.91rem;
+      line-height: 1.7;
+      color: var(--text);
+      border-top: 1px solid var(--gold-faint);
+      padding-top: 0.8rem;
+    }
+
+    /* ── Get Involved ───────────────────────────────────────────── */
+    .involve-intro {
+      font-size: 1.05rem;
+      max-width: 620px;
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+    }
+
+    .involve-intro-th {
+      font-size: 0.93rem;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.85;
+      margin-bottom: 2.2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      max-width: 520px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    input, textarea {
+      font-family: var(--sans);
+      font-size: 0.97rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--gold-faint);
+      padding: 0.65rem 0.85rem;
+      outline: none;
+      transition: border-color 0.18s;
+      border-radius: 0;
+      width: 100%;
+    }
+
+    input::placeholder, textarea::placeholder { color: #aaa; }
+
+    input:focus, textarea:focus {
+      border-color: var(--gold);
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      align-self: flex-start;
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--red);
+      color: #fff;
+      border: 1px solid var(--red);
+      padding: 0.7rem 1.8rem;
+      cursor: pointer;
+      transition: background 0.18s, border-color 0.18s;
+      border-radius: 0;
+    }
+
+    .btn-submit:hover {
+      background: var(--red-hover);
+      border-color: var(--gold);
+    }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--gold);
+      padding: 2.4rem 0;
+    }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-names {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .footer-name-th {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+
+    /* ── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      section { padding: 3.5rem 0; }
+
+      #hero { padding: 4.5rem 0 3.5rem; }
+
+      .pillars,
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .team-grid { gap: 1.2rem; }
+
+      .nav-links { display: none; }
+
+      .nav-brand { font-size: 0.97rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Logo symbol (referenced via <use> throughout) ──────────── -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <defs>
+      <symbol id="logo-mark" viewBox="0 0 48 48">
+        <rect width="48" height="48" rx="3" fill="#8B1A1A"/>
+        <text x="24" y="30"
+              font-family="'EB Garamond', Georgia, serif"
+              font-size="19"
+              fill="#FAF7F2"
+              text-anchor="middle">泰中</text>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ── Navigation ─────────────────────────────────────────────── -->
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#hero">
+        <svg class="logo-mark logo-mark--nav" aria-hidden="true"><use href="#logo-mark"/></svg>
+        Sino-Thai Study Club
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#what-we-do">What We Do</a></li>
+        <li><a href="#team">Members</a></li>
+        <li><a href="#get-involved">Get Involved</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Hero ───────────────────────────────────────────────────── -->
+  <section id="hero" aria-labelledby="hero-name">
+    <div class="container">
+      <svg class="logo-mark logo-mark--hero" role="img" aria-label="泰中 logomark"><use href="#logo-mark"/></svg>
+      <h1 class="hero-name" id="hero-name">Sino-Thai Study Club</h1>
+      <p class="hero-name-th" lang="th">กลุ่มศึกษาจีน-ไทย</p>
+      <p class="hero-name-th" lang="zh">泰中学部</p>
+      <hr class="hero-rule" />
+      <p class="hero-tagline">A community of Thai scholars and professionals interested in the study of China in Southeast Asia and the world</p>
+      <p class="hero-tagline-th th" lang="th"></p>
+    </div>
+  </section>
+
+  <!-- ── About ──────────────────────────────────────────────────── -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <h2 class="section-heading" id="about-heading">About</h2>
+      <p class="section-heading-th th" lang="th">เกี่ยวกับเรา</p>
+
+      <div class="about-body">
+        <p>The Sino-Thai Study Club is a youth organization aiming to promote the study and understanding of China's role in Thailand and ASEAN</p>
+        <p>We bring together scholars, academics, and professionals from Thailand, China, and beyond to share their insights and contribute to our mission. </p>
+      </div>
+
+      <hr class="about-divider" />
+
+      <div class="about-th">
+        <p lang="th">กลุ่มศึกษาจีน-ไทย เป็นองค์กรเยาวชนที่ต้องการส่งเสริมและสร้างเสริมความเข้าใจในบทบาทของประเทศจีนในประเทศไทยและในภูมิภาคอาเซียน</p>
+        <p lang="th">จุดประสงค์ของพวกเราคือการรวมตัวนักศึกษา นักวิชาการ และมืออาชีพจากประเทศไทย จีน และอื่นๆ เพื่อแลกเปลี่ยนความรู้และความเข้าใจในประเทศจีนไปด้วยกัน</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What We Do ──────────────────────────────────────────────── -->
+  <section id="what-we-do" aria-labelledby="pillars-heading">
+    <div class="container">
+      <h2 class="section-heading" id="pillars-heading">What We Do</h2>
+      <p class="section-heading-th th" lang="th">กิจกรรมของพวกเรา</p>
+
+      <div class="pillars">
+
+        <div class="pillar">
+          <p class="pillar-label">Speaker Series</p>
+          <p class="pillar-body">We invite leading scholars, practitioners, and policymakers to address the group on China–Thailand and China–ASEAN dynamics.</p>
+          <p class="pillar-body-th th" lang="th">พวกเราเชิญนักวิชาการ ผู้ปฏิบัติงาน และผู้กำหนดนโยบายชั้นนำมาบรรยายในประเด็นพลวัตจีนและอาเซียน ให้กับสมาชิกของเรา</p>
+        </div>
+
+        <div class="pillar">
+          <p class="pillar-label">Research &amp; Writing</p>
+          <p class="pillar-body">We provide a space for our members to produce and share analytical work, such as policy briefs and essays on China's role in the region.</p>
+          <p class="pillar-body-th th" lang="th">พวกเราสร้างเวทีให้สมาชิกของเราได้แบ่งปันงานเขียนและงานสรุปนโยบายเกี่ยวกับประเทศจีน</p>
+        </div>
+
+        <div class="pillar">
+          <p class="pillar-label">Community</p>
+          <p class="pillar-body">A network of Thai professionals and scholars with serious interest in China studies, based in Thailand, China, and beyond.</p>
+          <p class="pillar-body-th th" lang="th">พวกเราสร้างเครือข่ายผู้เชี่ยวชาญและนักวิชาการไทยที่สนใจศึกษาประเทศจีนอย่างจริงจัง ในประเทศไทย จีน และอื่นๆ</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Founding Team ───────────────────────────────────────────── -->
+  <section id="team" aria-labelledby="team-heading">
+    <div class="container">
+      <h2 class="section-heading" id="team-heading">Founding Members & Collaborators</h2>
+      <p class="section-heading-th th" lang="th">สมาชิกผู้ก่อตั้ง</p>
+
+      <div class="team-grid">
+
+        <div class="team-card">
+          <div class="team-avatar" aria-hidden="true">PP</div>
+          <div>
+            <p class="team-name">Pavat (Pooh) Pichetsin</p>
+            <p class="team-affil">Durham University</p>
+          </div>
+          <p class="team-desc">Preparing to study China's economic statecraft, soft power, and political philosophy in China</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar" aria-hidden="true">JT</div>
+          <div>
+            <p class="team-name">Jira (Hugh) Trinetkamol</p>
+            <p class="team-affil">Schwarzman Scholar, Tsinghua University</p>
+          </div>
+          <p class="team-desc">Studying policy leadership in Beijing after working as a policy advisor in Bangkok</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar" aria-hidden="true">CP</div>
+          <div>
+            <p class="team-name">Chonnipa (Jing Jing) Piriyalertsak</p>
+            <p class="team-affil">Yenching Scholar, Peking University</p>
+          </div>
+          <p class="team-desc">Researching US-China competition from a Thai/Southeast Asian perspective</p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar" aria-hidden="true">SA</div>
+          <div>
+            <p class="team-name">Saranchana (Dream) Atipanya</p>
+            <p class="team-affil">Founder, GrowUpward</p>
+          </div>
+          <p class="team-desc">Building GrowUpward, a China-Thai cybersecurity startup</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Get Involved ────────────────────────────────────────────── -->
+  <section id="get-involved" aria-labelledby="involve-heading">
+    <div class="container">
+      <h2 class="section-heading" id="involve-heading">Get Involved</h2>
+      <p class="section-heading-th th" lang="th">ร่วมกลุ่มกับพวกเรา</p>
+
+      <p class="involve-intro">We are building a founding cohort of Thai scholars and professionals with a genuine interest in studying China. If that describes you, we would like to hear from you.</p>
+      <p class="involve-intro-th th" lang="th">พวกเราเชิญชวนทุกคนที่สนใจศึกษาประเทศจีนอย่างจริงจังให้มาร่วมกลุ่มกับเรา หากนั่นคือคุณ โปรดกดส่งใบสมัครด้านล่าง</p>
+
+      <form id="interest-form" novalidate>
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="interest">Your China Interest</label>
+          <textarea id="interest" name="interest" placeholder="Briefly tell us about your interest in or connection to China — research, work, study, language, or otherwise."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Expression of Interest</button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-inner">
+      <svg class="logo-mark logo-mark--foot" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <div class="footer-names">
+        <p class="footer-name serif">Sino-Thai Study Club</p>
+        <p class="footer-name-th" lang="th">กลุ่มศึกษาจีน-ไทย</p>
+        <p class="footer-name-th" lang="zh">泰中学部</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('interest-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name     = document.getElementById('name').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const interest = document.getElementById('interest').value.trim();
+
+      if (!name || !email) {
+        alert('Please fill in your name and email address.');
+        return;
+      }
+
+      const subject = encodeURIComponent('Expression of Interest — Sino-Thai Study Club');
+
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n\n' +
+        'China Interest:\n' + (interest || '(not provided)')
+      );
+
+      window.location.href =
+        'mailto:pavatpichetsin@outlook.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+
+</body>
+</html>
