@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <path d="M5,0 H24 V48 H5 Q0,48 0,43 V5 Q0,0 5,0Z" fill="#8B1A1A"/>
+  <path d="M24,0 H43 Q48,0 48,5 V43 Q48,48 43,48 H24Z" fill="#1A3D7C"/>
+  <rect x="22.5" width="3" height="48" fill="#B8960C"/>
+  <text x="12" y="34" font-family="Georgia,serif" font-size="20" fill="#FAF7F2" text-anchor="middle">中</text>
+  <text x="36" y="34" font-family="Georgia,serif" font-size="20" fill="#FAF7F2" text-anchor="middle">盟</text>
+</svg>
